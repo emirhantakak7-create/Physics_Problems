@@ -1,117 +1,60 @@
-# Problem 6: Variable Velocity
+# 6. Variable Velocity
 
-We are given the velocity function $v(t)=t^2+2t-5$ and the initial position $x(0)=4$.
+The velocity of an object as a function of time is:
+v(t) = t^2 + 2t - 5
 
-We want:
-
-1. The position at $t=3$, i.e. $x(3)$.
-2. The acceleration at $t=3$, i.e. $a(3)$.
-
----
-
-## 1) Position from velocity theory
-
-Velocity is the derivative of position:
-
-$$
-v(t)=\frac{dx}{dt}
-$$
-
-So:
-
-$$
-\frac{dx}{dt}=t^2+2t-5
-$$
-
-Integrate both sides with respect to $t$:
-
-$$
-x(t)=\int (t^2+2t-5)\,dt
-$$
-
-Compute the integral term-by-term:
-
-$$
-\int t^2\,dt=\frac{t^3}{3},\qquad
-\int 2t\,dt=t^2,\qquad
-\int (-5)\,dt=-5t
-$$
-
-So the general position function is:
-
-$$
-x(t)=\frac{t^3}{3}+t^2-5t+C
-$$
-
-Use the initial condition $x(0)=4$:
-
-$$
-x(0)=\frac{0^3}{3}+0^2-5\cdot 0 + C = C = 4
-$$
-
-Therefore:
-
-$$
-x(t)=\frac{t^3}{3}+t^2-5t+4
-$$
-
-Now evaluate at $t=3$:
-
-$$
-x(3)=\frac{3^3}{3}+3^2-5\cdot 3+4
-=\frac{27}{3}+9-15+4
-=9+9-15+4
-$$
-
-Compute:
-$$
-9+9=18,\qquad 18-15=3,\qquad 3+4=7
-$$
-
-So:
-
-$$
-x(3)=7
-$$
+Initial condition: At t = 0, the position is x(0) = 4.
+We need to find the object's acceleration a(t) and position x(t) at time t = 3.
 
 ---
 
-## 2) Acceleration from velocity
+## Step 1: Find the acceleration at t = 3
 
-Acceleration is the derivative of velocity:
+Acceleration is the first derivative of velocity with respect to time:
+a(t) = d[v(t)] / dt
+a(t) = d/dt (t^2 + 2t - 5)
+a(t) = 2t + 2
 
-$$
-a(t)=\frac{dv}{dt}
-$$
+Now, substitute t = 3 into the acceleration function:
+a(3) = 2(3) + 2
+a(3) = 6 + 2
+a(3) = 8
 
-Differentiate:
-
-$$
-v(t)=t^2+2t-5
-\quad\Rightarrow\quad
-a(t)=2t+2
-$$
-
-Evaluate at $t=3$:
-
-$$
-a(3)=2\cdot 3 + 2 = 8
-$$
+So, the acceleration at t = 3 is 8.
 
 ---
 
-## Final answers
+## Step 2: Find the position function x(t)
 
-$$
-x(3)=7
-$$
+Position is the integral of velocity with respect to time:
+x(t) = ∫ v(t) dt
+x(t) = ∫ (t^2 + 2t - 5) dt
+x(t) = (1/3)t^3 + t^2 - 5t + C
 
-$$
-a(3)=8
-$$
+To find the integration constant C, we use the initial condition x(0) = 4:
+x(0) = (1/3)(0)^3 + (0)^2 - 5(0) + C = 4
+C = 4
+
+So the complete position function is:
+x(t) = (1/3)t^3 + t^2 - 5t + 4
 
 ---
 
-## Plot the velocity and acceleration
+## Step 3: Find the position at t = 3
 
-![Velocity and Acceleration Plots](velocity_acceleration_plots.png)
+Substitute t = 3 into the position function:
+x(3) = (1/3)(3)^3 + (3)^2 - 5(3) + 4
+x(3) = (1/3)(27) + 9 - 15 + 4
+x(3) = 9 + 9 - 15 + 4
+x(3) = 18 - 15 + 4
+x(3) = 7
+
+So, the position at t = 3 is 7.
+
+---
+
+## Final Result
+
+At time t = 3:
+Acceleration: **a(3) = 8**
+Position: **x(3) = 7**
